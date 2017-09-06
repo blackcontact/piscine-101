@@ -1,0 +1,6 @@
+Credentials cache: API:29732
+        Principal: mschneid@LE-101.FR
+
+  Issued                Expires               Principal
+Sep  5 10:17:44 2017  Sep  5 20:17:43 2017  krbtgt/LE-101.FR@LE-101.FR
+Sep  5 10:17:47 2017  Sep  5 20:17:43 2017  ldap/ldap-master.le-101.fr@LE-101.FR
