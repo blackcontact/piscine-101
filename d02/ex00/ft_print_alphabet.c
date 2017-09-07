@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 17:06:10 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/07 17:07:18 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/07 20:09:50 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@ void	ft_putchar (char c);
 
 void	ft_print_alphabet(void)
 {
-	char c = 'a';
+	char c;
+
+	c = 'a';
 	while (c <= 'z')
 	{
 		ft_putchar(c);
