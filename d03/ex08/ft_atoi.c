@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/09 10:38:30 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/09 14:39:56 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/09 14:40:13 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/09 16:55:40 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int		ft_atoi(char *str)
 {
+	int		output;
 	int		i;
+	int		minus_sign;
 
 	i = 0;
-	while (str[i] != '\0')
+	minus_sign = 0;
+	output = 0;
+	while (str[i] >= 9 && str[i] <= 13)
+		i++;
+	if (str[i] == '-')
+		minus_sign = 1;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
+		output = (output * 10) + (str[i] - 48);
 		i++;
 	}
-	return (i);
-}
-
-char	*ft_strrev(char *str)
-{
-	int		i;
-	int		length;
-	char	temp;
-
-	i = 0;
-	length = ft_strlen(str);
-	while (i <= (length - 1) / 2)
-	{
-		temp = str[i];
-		str[i] = str[length - 1 - i];
-		str[length - 1 - i] = temp;
-		i++;
-	}
-	return (str);
+	if (minus_sign)
+		output = output * -1;
+	return (output);
 }

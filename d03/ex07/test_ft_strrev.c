@@ -6,9 +6,11 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 10:38:30 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/09 14:39:56 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/09 14:37:08 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int		ft_strlen(char *str)
 {
@@ -30,12 +32,20 @@ char	*ft_strrev(char *str)
 
 	i = 0;
 	length = ft_strlen(str);
-	while (i <= (length - 1) / 2)
+
+	while(i <= (length-1) / 2)
 	{
 		temp = str[i];
 		str[i] = str[length - 1 - i];
 		str[length - 1 - i] = temp;
 		i++;
 	}
-	return (str);
+	return str;
+}
+
+int		main()
+{
+	char	str[] =  "s";
+	printf("%s", ft_strrev(str));
+	return (0);
 }
