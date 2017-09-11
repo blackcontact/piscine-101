@@ -6,11 +6,18 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 23:29:27 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/11 12:14:55 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/11 12:12:45 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	sastantua_stars(int stars, int floor, int door_size, int stars_bd)
 {
@@ -86,11 +93,11 @@ void	sastantua(int size)
 	int		sastantua_info[5];
 
 	i = 0;
-	sastantua_info[1] = 3;
-	sastantua_info[3] = 4;
-	sastantua_info[2] = 1;
-	sastantua_info[0] = (sastantua_calcul(size) / 2) - 1;
-	sastantua_info[4] = 1;
+	sastantua_info[1] = 3;								  //	1 = next_level
+	sastantua_info[3] = 4;								  //	3 = new stars
+	sastantua_info[2] = 1;								  //	2 = stars
+	sastantua_info[0] = (sastantua_calcul(size) / 2) - 1; //	0 = spaces
+	sastantua_info[4] = 1;								  //	4 = step
 	while (i < ((size * (5 + size)) / 2))
 	{
 		i++;
@@ -107,4 +114,12 @@ void	sastantua(int size)
 		sastantua_info[2] = sastantua_info[2] + 2;
 		sastantua_info[0]--;
 	}
+}
+
+int		main(int argc, char *argv[])
+{
+	argc = 0;
+	int arg = strtol(argv[1], NULL, 10);
+	sastantua(arg);
+	return (0);
 }
