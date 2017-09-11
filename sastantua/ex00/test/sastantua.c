@@ -6,13 +6,13 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 23:29:27 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/11 17:14:52 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/11 12:47:37 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_sastantua_stars(int stars, int floor, int door_size, int stars_bd)
+void	sastantua_stars(int stars, int floor, int door_size, int stars_bd)
 {
 	int i;
 
@@ -33,7 +33,7 @@ void	ft_sastantua_stars(int stars, int floor, int door_size, int stars_bd)
 	}
 }
 
-void	ft_sastantua_display(int spaces, int stars, int size, int floor)
+void	sastantua_display(int spaces, int stars, int size, int floor)
 {
 	int		sti;
 	int		spi;
@@ -53,13 +53,13 @@ void	ft_sastantua_display(int spaces, int stars, int size, int floor)
 			spi++;
 		}
 		ft_putchar('/');
-		ft_sastantua_stars(stars, floor, door_size, stars_bd);
+		sastantua_stars(stars, floor, door_size, stars_bd);
 		ft_putchar('\\');
 		ft_putchar('\n');
 	}
 }
 
-int		ft_sastantua_calcul(int size)
+int		sastantua_calcul(int size)
 {
 	int		step;
 	int		stars;
@@ -89,12 +89,12 @@ void	sastantua(int size)
 	sastantua_info[1] = 3;
 	sastantua_info[3] = 4;
 	sastantua_info[2] = 1;
-	sastantua_info[0] = (ft_sastantua_calcul(size) / 2) - 1;
+	sastantua_info[0] = (sastantua_calcul(size) / 2) - 1;
 	sastantua_info[4] = 1;
 	while (i < ((size * (5 + size)) / 2))
 	{
 		i++;
-		ft_sastantua_display(sastantua_info[0], sastantua_info[2], size, i);
+		sastantua_display(sastantua_info[0], sastantua_info[2], size, i);
 		if (i >= sastantua_info[1])
 		{
 			sastantua_info[4]++;
