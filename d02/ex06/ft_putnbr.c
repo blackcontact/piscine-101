@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 10:21:35 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/08 13:42:14 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/11 17:55:38 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_putnbr_nbrofdigits(int nb)
 int		ft_putnbr_extractdigit(int nb, int digitnb)
 {
 	int		i;
-	char	arr[i];
+	char	arr[ft_putnbr_nbrofdigits(nb)];
 	int		nb2;
 
 	i = ft_putnbr_nbrofdigits(nb);
