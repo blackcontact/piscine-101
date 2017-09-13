@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 19:58:54 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 10:36:37 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 10:43:19 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 10:46:50 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_recursive_factorial(int nb)
+#include <stdio.h>
+
+int		ft_eight_queens_puzzle(void);
+
+int		main(void)
 {
-	if (nb == 0)
-		return 1;
-	return (nb * ft_recursive_factorial(nb-1));
+	printf("%d", ft_eight_queens_puzzle());
+	return (0);
 }
