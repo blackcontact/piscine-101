@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 14:46:51 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 11:48:49 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 14:04:18 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 14:24:20 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_is_prime(int nb);
-
-int		main(void)
+int		ft_atoi(char *str)
 {
-	printf("%d\n", ft_is_prime(520000));
-	return (0);
+	int		result;
+	int		i;
+	int		minus;
+
+	result = 0;
+	i = 0;
+	while (str[i] <= 32)
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			minus = 1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + str[i] - 48 ;
+		i++;
+	}
+	if (minus)
+		result = -result;
+	return (result);
 }

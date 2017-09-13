@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 14:46:51 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 11:48:49 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 16:06:01 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 16:32:17 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_is_prime(int nb);
-
-int		main(void)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	printf("%d\n", ft_is_prime(520000));
-	return (0);
+	unsigned int		i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (src[i] != '\0')
+			dest[i] = src[i];
+		else
+			dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

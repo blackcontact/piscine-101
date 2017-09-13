@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 14:46:51 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 11:48:49 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 11:09:46 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 11:24:51 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+void	ft_putchar(char c);
 
-#include <stdio.h>
-
-int		ft_is_prime(int nb);
-
-int		main(void)
+void	ft_putstr(char *str)
 {
-	printf("%d\n", ft_is_prime(520000));
-	return (0);
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

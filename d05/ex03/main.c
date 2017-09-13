@@ -5,17 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 14:46:51 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 11:48:49 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 14:28:55 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 14:59:50 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <strings.h>
 
-int		ft_is_prime(int nb);
+char	*ft_strcpy(char *dest, char *src);
 
 int		main(void)
 {
-	printf("%d\n", ft_is_prime(520000));
+	char	src[] = "Salut!";
+	char	dest[] = "coucou";
+
+	printf("%s\n", dest);
+	ft_strcpy(dest, src);
+	printf("%s\n", dest);
 	return (0);
 }

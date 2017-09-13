@@ -5,17 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 14:46:51 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 11:48:49 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 11:26:08 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 14:01:50 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int		ft_is_prime(int nb);
+void	ft_putnbr(int nb);
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 int		main(void)
 {
-	printf("%d\n", ft_is_prime(520000));
+	int nb;
+
+	nb = 741852;
+	ft_putnbr(nb);
 	return (0);
 }

@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_ex01.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 14:46:51 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 11:48:49 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 16:42:17 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 16:56:46 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int		ft_is_prime(int nb);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_print_reverse_alphabet(void);
 
 int		main(void)
 {
-	printf("%d\n", ft_is_prime(520000));
+	ft_print_reverse_alphabet();
 	return (0);
 }

@@ -5,17 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 14:46:51 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 11:48:49 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 16:33:42 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 16:35:25 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_is_prime(int nb);
+char	*ft_strstr(char *str, char *to_find);
 
 int		main(void)
 {
-	printf("%d\n", ft_is_prime(520000));
 	return (0);
 }
