@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_integer_table.c                            :+:      :+:    :+:   */
+/*   match.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 13:55:34 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 18:34:43 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/14 17:17:44 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/14 17:43:41 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_sort_integer_table(int *tab, int size)
+int		match(char *s1, char *s2)
 {
 	int		i;
-	int		finish;
-	int		swap;
+	int		j;
+	int		result;
 
+	result = 1;
 	i = 0;
-	finish = 0;
-	while (i < size - 1)
+	j = 0;
+	while (s1[i] != '\0')
 	{
-		if (tab[i] > tab[i + 1])
+		if (s2[i] == '*')
 		{
-			swap = tab[i];
-			tab[i] = tab[i + 1];
-			tab[i + 1] = swap;
-			i = 0;
+			j = i;
+			while (s1[j + 1])
 		}
-		i++;
+		if (s1[i] != s2[i])
+		{
+			result = 0;
+			return (result);
+		}
+	i++;
 	}
+	return (result);
 }
