@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 09:54:20 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/12 14:40:50 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/14 15:58:25 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_sqrt_process(int nb, int limit)
 		return (0);
 	if (nb * nb == limit)
 		return (nb);
-	return (ft_sqrt_process(nb+1, limit));
+	return (ft_sqrt_process(nb + 1, limit));
 }
 
 int		ft_sqrt(int nb)
@@ -24,5 +24,5 @@ int		ft_sqrt(int nb)
 	if (nb == 0)
 		return (0);
 	else
-		return(ft_sqrt_process(1, nb));
+		return (ft_sqrt_process(1, nb));
 }

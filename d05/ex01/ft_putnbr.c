@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 11:26:06 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 14:01:48 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/13 17:32:19 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	ft_putnbr_inarray(int nb, int *array)
 		i++;
 	}
 }
-
 
 void	ft_putnbr(int nb)
 {

@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_ex01.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 18:58:02 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/11 19:06:30 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 16:42:17 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 16:56:46 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int		ft_iterative_factorial(int nb);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_print_reverse_alphabet(void);
 
 int		main(void)
 {
-	printf("%d",ft_iterative_factorial(3));
+	ft_print_reverse_alphabet();
 	return (0);
 }

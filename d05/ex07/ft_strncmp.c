@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 19:55:23 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 16:31:11 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 21:44:03 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 22:41:25 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int result;
+	unsigned int i;
 
-	if (nb > 12 || nb < 0)
+	i = 0;
+	if (n == 0)
 		return (0);
-	result = 1;
-	while (nb > 0)
-	{
-		result = result * nb;
-		nb--;
-	}
-	return (result);
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
+		i++;
+	return (s1[i] - s2[i]);
 }

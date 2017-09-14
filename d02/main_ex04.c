@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_ex04.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 14:17:26 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/12 14:19:07 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 17:02:59 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 17:03:09 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int		ft_sqrt(int nb);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_print_comb(void);
 
 int		main(void)
 {
-	printf("%d", ft_sqrt(10));
+	ft_print_comb();
 	return (0);
 }

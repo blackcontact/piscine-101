@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 19:55:23 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 16:31:11 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/12 14:17:26 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/14 16:42:30 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb)
-{
-	int result;
+#include <stdio.h>
+#include <stdlib.h>
 
-	if (nb > 12 || nb < 0)
-		return (0);
-	result = 1;
-	while (nb > 0)
-	{
-		result = result * nb;
-		nb--;
-	}
-	return (result);
+int		ft_sqrt(int nb);
+
+int		main(int argc, char *argv[])
+{
+	(void)argc;
+	printf("%d", ft_sqrt(atoi(argv[1])));
+	return (0);
 }

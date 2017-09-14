@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 18:58:02 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/11 20:55:34 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 22:42:34 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 22:52:44 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_recursive_power(int nb, int power);
-
-int		main(void)
+char	*ft_strupcase(char *str)
 {
-	printf("%d",ft_recursive_power(3, 3));
-	return (0);
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			str[i] = str[i] - 32;
+		}
+		i++;
+	}
+	return str;
 }

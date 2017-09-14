@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   main_ex18.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 19:55:23 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 16:31:11 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/14 12:10:20 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/14 14:17:28 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb)
-{
-	int result;
+#include <stdio.h>
+#include <string.h>
 
-	if (nb > 12 || nb < 0)
-		return (0);
-	result = 1;
-	while (nb > 0)
-	{
-		result = result * nb;
-		nb--;
-	}
-	return (result);
+//unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+
+int				main(void)
+{
+	char			dest[50] = "1234";
+	char			src[50] = "56789";
+	unsigned int	size = 12;
+
+	printf("%s\n", dest);
+	printf("strlcat :'%lu'\n", strlcat(dest, src, size));
+	printf("%s", dest);
+	return (0);
 }

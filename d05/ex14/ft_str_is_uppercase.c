@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 19:55:23 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 16:31:11 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/14 10:47:10 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/14 10:48:44 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb)
+int		ft_str_is_uppercase(char *str)
 {
-	int result;
+	int		i;
+	int		result;
 
-	if (nb > 12 || nb < 0)
-		return (0);
+	i = 0;
 	result = 1;
-	while (nb > 0)
+
+	while (str[i] != '\0' && result)
 	{
-		result = result * nb;
-		nb--;
+		if (!(str[i] >= 'A' && str[i] <= 'Z'))
+			result = 0;
+		i++;
 	}
 	return (result);
 }

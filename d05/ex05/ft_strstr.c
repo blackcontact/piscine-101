@@ -6,8 +6,28 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 16:33:24 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 16:35:30 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/13 21:25:02 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*ft_strstr(char *str, char *to_find)
+{
+	int		i;
+	int		j;
 
+	i = 0;
+	while (str[i] != '\0')
+	{
+		j = 0;
+		while (to_find[j] == str[i + j])
+		{
+			if (to_find[j + 1] == '\0')
+			{
+				return (str + i);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}

@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_ex10.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 14:46:51 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 11:48:49 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 22:58:40 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/14 10:04:41 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_is_prime(int nb);
+char	*ft_strcapitalize(char *str);
 
 int		main(void)
 {
-	printf("%d\n", ft_is_prime(520000));
+	char	str[] = "on-va manger des chips. t'entends ? des chips ! lol+mdr";
+
+	printf("%s", ft_strcapitalize(str));
 	return (0);
 }

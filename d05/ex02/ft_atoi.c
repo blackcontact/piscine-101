@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 14:04:18 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 14:24:20 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/13 17:32:41 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_atoi(char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = (result * 10) + str[i] - 48 ;
+		result = (result * 10) + str[i] - 48;
 		i++;
 	}
 	if (minus)

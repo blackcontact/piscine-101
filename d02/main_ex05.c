@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   main_ex05.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 19:55:23 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 16:31:11 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/13 17:06:33 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/13 17:07:14 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb)
-{
-	int result;
+#include <unistd.h>
 
-	if (nb > 12 || nb < 0)
-		return (0);
-	result = 1;
-	while (nb > 0)
-	{
-		result = result * nb;
-		nb--;
-	}
-	return (result);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_print_comb2(void);
+
+int		main(void)
+{
+	ft_print_comb2();
+	return (0);
 }

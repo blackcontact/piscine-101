@@ -5,14 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 16:33:42 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 16:35:25 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/11 18:58:02 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/14 16:40:28 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find);
+#include <stdio.h>
+#include <stdlib.h>
 
-int		main(void)
+int		ft_fibonacci(int index);
+
+int		main(int argc, char *argv[])
 {
+	(void)argc;
+	printf("%d", ft_fibonacci(atoi(argv[1])));
 	return (0);
 }

@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 19:55:23 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 16:31:11 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/14 11:55:40 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/14 12:07:53 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb)
+char	*ft_strncat(char *dest, char *src, int nb)
 {
-	int result;
+	int		i;
+	int		j;
 
-	if (nb > 12 || nb < 0)
-		return (0);
-	result = 1;
-	while (nb > 0)
+	i = 0;
+	j = 0;
+	while(dest[i] != '\0')
+		i++;
+	while(src[i] != '\0' && j < nb)
 	{
-		result = result * nb;
-		nb--;
+		dest[i] = src[i];
+		i++;
+		j++;
 	}
-	return (result);
+	dest[i] = '\0';
+	return dest;
 }

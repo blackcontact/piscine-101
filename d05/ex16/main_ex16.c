@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_ex16.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 18:58:02 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/11 20:45:29 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/14 11:04:11 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/14 11:54:52 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-int		ft_iterative_power(int nb, int power);
+char	*ft_strcat(char *dest, char *src);
 
 int		main(void)
 {
-	printf("%d",ft_iterative_power(3, 3));
+	char	str_dest[50] = "Salut les ";
+	char	str_src[50] = "zouzous   ";
+	printf("strcat='%s'\n", strcat(str_dest, str_src));
+	printf("strcat='%s'\n", ft_strcat(str_dest, str_src));
 	return (0);
 }

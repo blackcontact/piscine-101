@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   main_ex17.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 19:55:23 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 16:31:11 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/14 11:57:41 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/14 12:06:44 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb)
-{
-	int result;
+#include <stdio.h>
+#include <string.h>
 
-	if (nb > 12 || nb < 0)
-		return (0);
-	result = 1;
-	while (nb > 0)
-	{
-		result = result * nb;
-		nb--;
-	}
-	return (result);
+char	*ft_strncat(char *dest, char *src, int nb);
+
+int		main(void)
+{
+	char	dest[50] = "Salut les zouzous";
+	char	src[50] = "|mdr sa marche ou pas";
+	int		nb = 5;
+
+	printf("strncat:'%s'\n", strncat(dest, src, nb));
+	printf("ft_strncat:'%s'\n", ft_strncat(dest, src, nb));
+	return (0);
 }
