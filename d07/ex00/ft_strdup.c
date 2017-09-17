@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 11:16:15 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/15 15:27:05 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/15 22:32:28 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/16 11:14:06 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c)
+char	*ft_strdup(char *src)
 {
-	write(1, &c, 1);
-}
+	int		i;
+	char	*strdup;
 
-void	ft_putstr(char *str);
-
-int		main(void)
-{
-	char str[] = "salut les zouzous";
-
-	ft_putstr(str);
-	return (0);
+	i = 0;
+	if (!(strdup = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	while (src[i] != '\0')
+	{
+		strdup[i] = src[i];
+		i++;
+	}
+	strdup[i] = '\0';
+	return (strdup);
 }

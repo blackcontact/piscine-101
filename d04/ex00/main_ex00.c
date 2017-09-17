@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 18:58:02 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 16:31:19 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/17 21:48:36 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int		ft_iterative_factorial(int nb);
 
 int		main(void)
 {
-	printf("%d",ft_iterative_factorial(-1));
+	printf("%d",ft_iterative_factorial(12));
 	return (0);
 }

@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_ex02.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 11:16:15 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/15 15:27:05 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/16 13:22:27 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/16 14:10:38 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str);
+int		ft_ultimate_range(int **range, int min, int max);
 
 int		main(void)
 {
-	char str[] = "salut les zouzous";
+	int		min;
+	int		max;
+	int		*range;
+	int		i;
 
-	ft_putstr(str);
+	min = 5;
+	max = 100;
+	i = 0;
+	ft_ultimate_range(&range, min, max);
+	while (i < max - min)
+	{
+		printf("%d\n", range[i]);
+		i++;
+	}
 	return (0);
 }

@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 11:16:15 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/15 15:27:05 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/16 12:25:22 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/16 14:02:20 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c)
+int		ft_ultimate_range(int **range, int min, int max)
 {
-	write(1, &c, 1);
-}
+	int		*tab;
+	int		i;
 
-void	ft_putstr(char *str);
-
-int		main(void)
-{
-	char str[] = "salut les zouzous";
-
-	ft_putstr(str);
-	return (0);
+	if (min >= max)
+	{
+		*range = (void *)0;
+		return (0);
+	}
+	if (!(tab = (int *)malloc(sizeof(int) * (max - min))))
+		return (0);
+	i = 0;
+	while (min < max)
+	{
+		tab[i] = min;
+		i++;
+		min++;
+	}
+	*range = tab;
+	return (i);
 }

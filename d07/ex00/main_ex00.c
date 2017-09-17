@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_ex00.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 11:16:15 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/15 15:27:05 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/15 22:34:51 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/16 11:13:37 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str);
+char	*ft_strdup(char *src);
 
 int		main(void)
 {
-	char str[] = "salut les zouzous";
+	char	src[] = "Salut les zouzous";
+	char	*cpy;
 
-	ft_putstr(str);
+	cpy = ft_strdup(src);
+	printf("%s", cpy);
 	return (0);
 }

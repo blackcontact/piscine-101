@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 11:16:15 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/15 15:27:05 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/14 22:31:06 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/15 11:51:08 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }
 
-void	ft_putstr(char *str);
-
-int		main(void)
+int		main(int argc, char **argv)
 {
-	char str[] = "salut les zouzous";
-
-	ft_putstr(str);
+	if (argc >= 1)
+		ft_putstr(argv[0]);
+	else
+		return (-1);
 	return (0);
 }

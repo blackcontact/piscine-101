@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 10:43:19 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 10:46:50 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/14 21:21:17 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/15 11:25:01 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_eight_queens_puzzle(void);
-
-int		main(void)
+int		ft_strcmp(char *s1, char *s2)
 {
-	printf("%d", ft_eight_queens_puzzle());
-	return (0);
+	int		i;
+
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

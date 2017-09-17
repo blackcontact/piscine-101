@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 11:16:15 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/15 15:27:05 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/15 11:29:19 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/15 11:51:24 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	int		i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }
 
-void	ft_putstr(char *str);
-
-int		main(void)
+int		main(int argc, char *argv[])
 {
-	char str[] = "salut les zouzous";
+	int		i;
 
-	ft_putstr(str);
+	i = 0;
+	(void)argc;
+	while (argv[i])
+	{
+		ft_putstr(argv[i]);
+		ft_putchar('\n');
+		i++;
+	}
 	return (0);
 }

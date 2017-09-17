@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_eight_queens_puzzle.c                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 10:26:13 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 15:59:16 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/14 21:18:31 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/14 21:20:13 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+void	ft_putchar(char c);
 
-int		ft_eight_queens_puzzle_comp(int res)
+void	ft_putstr(char *str)
 {
-	if (res == 92)
-		return (res);
-	else
-		return (ft_eight_queens_puzzle_comp(res + 1));
-}
+	int		i;
 
-int		ft_eight_queens_puzzle(void)
-{
-	return (ft_eight_queens_puzzle_comp(1));
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

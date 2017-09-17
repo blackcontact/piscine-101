@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_ex03.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 11:16:15 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/15 15:27:05 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/16 14:11:38 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/16 16:15:22 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+char	*ft_concat_params(int argc, char **argv);
+
+int		main(int argc, char **argv)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str);
-
-int		main(void)
-{
-	char str[] = "salut les zouzous";
-
-	ft_putstr(str);
+	printf("%s", ft_concat_params(argc, argv));
 	return (0);
 }

@@ -5,21 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 11:26:06 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 17:32:19 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/08 10:21:35 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/11 17:55:38 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 void	ft_putchar(char c);
 
-int		ft_putnbr_count(int nb)
+int		ft_putnbr_nbrofdigits(int nb)
 {
-	int		count;
+	int	count;
 
 	count = 0;
-	while (nb > 0)
+	while (nb != 0)
 	{
 		nb /= 10;
 		count++;
@@ -27,29 +25,54 @@ int		ft_putnbr_count(int nb)
 	return (count);
 }
 
-void	ft_putnbr_inarray(int nb, int *array)
+int		ft_putnbr_extractdigit(int nb, int digitnb)
 {
 	int		i;
+	char	arr[ft_putnbr_nbrofdigits(nb)];
+	int		nb2;
 
-	i = 0;
-	while (nb > 0)
+	i = ft_putnbr_nbrofdigits(nb);
+	while (i--)
 	{
-		array[i] = nb % 10;
-		nb /= 10;
-		i++;
+		nb2 = nb;
+		nb = nb / 10;
+		arr[i] = nb2 - nb * 10;
 	}
+	return (arr[digitnb]);
+}
+
+void	ft_putnbr_convertprint(int digit)
+{
+	char c;
+
+	c = digit + '0';
+	ft_putchar(c);
 }
 
 void	ft_putnbr(int nb)
 {
-	int		array[ft_putnbr_count(nb)];
-	int		i;
+	int i;
+	int intmin;
 
-	i = ft_putnbr_count(nb) - 1;
-	ft_putnbr_inarray(nb, array);
-	while (i >= 0)
+	i = 0;
+	intmin = 0;
+	if (nb == 0)
+		ft_putchar('0');
+	if (nb < 0)
 	{
-		ft_putchar('0' + array[i]);
-		i--;
+		ft_putchar('-');
+		nb = nb * -1;
 	}
+	if (nb == -2147483648)
+	{
+		intmin = 1;
+		nb = 214748364;
+	}
+	while (i < ft_putnbr_nbrofdigits(nb))
+	{
+		ft_putnbr_convertprint(ft_putnbr_extractdigit(nb, i));
+		i++;
+	}
+	if (intmin)
+		ft_putchar('8');
 }

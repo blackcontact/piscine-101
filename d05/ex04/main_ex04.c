@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 16:06:08 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 16:33:08 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/15 16:13:50 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned);
 
-int		main(void)
+int		main(int arc, char **av)
 {
-	char	str1[] = "hey you";
-	char	str2[40];
-	printf("%s", ft_strncpy(str2, str1, 4));
+	if (arc >= 1)
+		printf("%s", ft_strncpy(av[1], av[2], 40));
 	return (0);
 }
