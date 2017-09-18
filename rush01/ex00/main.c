@@ -5,20 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/17 23:19:56 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/18 00:53:20 by mschneid         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/17 18:51:49 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/17 23:16:03 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/18 11:16:46 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/18 14:28:47 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +19,23 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
+
 int		*sk_positions(int sudoku[9][9], int znb)
 {
-	int i;
-	int j;
-	int count;
+	int		i;
+	int		j;
+	int		count;
 	int		*ztofind;
 
 	ztofind = (int *)malloc(sizeof(int) * znb);
@@ -55,7 +55,7 @@ int		*sk_positions(int sudoku[9][9], int znb)
 		}
 		i++;
 	}
-	return ztofind;
+	return (ztofind);
 }
 
 int		sk_fillarray(char str[9][10], int sudoku[9][9])
@@ -96,6 +96,8 @@ void	sk_display(int sudoku[9][9])
 		while (j < 9)
 		{
 			ft_putchar(sudoku[i][j] + '0');
+			if (j != 8)
+				ft_putchar(' ');
 			j++;
 		}
 		ft_putchar('\n');
@@ -131,43 +133,37 @@ int		sk_isok(int sudoku[9][9], int num, int li, int col)
 	return (1);
 }
 
-int		sudoku_solve(int sudoku[9][9], int *ztofind, int zi, int zi_stop)
+int		sudoku_solve(int sudoku[9][9], int* ztofind, int zi, int zi_stop)
 {
-	int li;
-	int col;
 	int i;
-	int stop;
+	int solutions;
 
-	//printf("%d\n", zi);
+	solutions = 0;
 	if (zi == zi_stop)
-	{
-		printf("finish");
 		return (1);
-	}
-	li = ztofind[zi] / 10;
-	col = ztofind[zi] % 10;
 	i = 1;
-	stop = 0;
 	while (i <= 9)
 	{
-		if (sk_isok(sudoku, i, li, col))
+		if (sk_isok(sudoku, i, ztofind[zi] / 10, ztofind[zi] % 10))
 		{
-			sudoku[li][col] = i;
+			sudoku[ztofind[zi] / 10][ztofind[zi] % 10] = i;
 			if (sudoku_solve(sudoku, ztofind, zi + 1, zi_stop))
+			{
 				return (1);
+			}
 		}
-		sudoku[li][col] = 0;
+		sudoku[ztofind[zi] / 10][ztofind[zi] % 10] = 0;
 		i++;
 	}
 	return (0);
 }
 
-int		main(void)
+int		main(int argc, char **argv)
 {
 	int		sudoku[9][9];
 	int		count;
 	int		*ztofind;
-	char	argv[9][10] =
+	/*char	argv[9][10] =
 	{
 		{"9...7...."},
 		{"2...9..53"},
@@ -178,10 +174,16 @@ int		main(void)
 		{"..37..68."},
 		{".9..5.741"},
 		{"47......."},
-	};
+	};*/
+	if (argc == 10)
+	{
+		sk_fillarray(**argv, sudoku);
+	}
 	count = sk_fillarray(argv, sudoku);
 	ztofind = sk_positions(sudoku, count);
-	sudoku_solve(sudoku, ztofind, 0, count);
-	sk_display(sudoku);
+	if (sudoku_solve(sudoku, ztofind, 0, count))
+		sk_display(sudoku);
+	else
+		ft_putstr("Error\n");
 	return (0);
 }

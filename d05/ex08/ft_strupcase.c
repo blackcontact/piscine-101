@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 22:42:34 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 22:52:44 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/18 14:56:46 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ char	*ft_strupcase(char *str)
 		}
 		i++;
 	}
-	return str;
+	return (str);
 }

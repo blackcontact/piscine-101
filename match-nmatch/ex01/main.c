@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ex18.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/14 12:10:20 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 14:17:28 by mschneid         ###   ########.fr       */
+/*   Created: 2017/09/14 17:19:08 by mschneid          #+#    #+#             */
+/*   Updated: 2017/09/17 16:16:39 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
-//unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+int		match(char *s1, char *s2);
 
-int				main(void)
+int		main(void)
 {
-	char			dest[50] = "1234";
-	char			src[50] = "56789";
-	unsigned int	size = 12;
-
-	printf("%s\n", dest);
-	printf("strlcat :'%lu'\n", strlcat(dest, src, size));
-	printf("%s", dest);
+	char	s1[] = "123 123 123 123 123 123 123 123 123x";
+	char	s2[] = "1*23x*";
+	printf("%d\n", match(s1,s2));
 	return (0);
 }

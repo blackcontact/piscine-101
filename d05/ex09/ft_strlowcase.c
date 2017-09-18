@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 22:53:45 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/13 22:57:23 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/18 17:31:19 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ char	*ft_strlowcase(char *str)
 			str[i] = str[i] + 32;
 		i++;
 	}
-	return str;
+	return (str);
 }

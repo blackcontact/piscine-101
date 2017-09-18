@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/14 10:25:10 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/14 10:34:56 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/18 17:30:28 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,14 @@ int		ft_str_is_alpha(char *str)
 
 	result = 1;
 	i = 0;
-
 	while (str[i] != '\0' && result)
 	{
 		if (!((str[i] >= 'A' && str[i] <= 'Z')
-				 || (str[i] >= 'a' && str[i] <= 'z')))
+				|| (str[i] >= 'a' && str[i] <= 'z')))
 		{
 			result = 0;
 		}
 		i++;
 	}
-
 	return (result);
 }
