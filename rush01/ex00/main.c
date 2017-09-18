@@ -6,13 +6,15 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 11:16:46 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/18 14:28:47 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/18 20:48:03 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+
+int		g_skipfirstsoluce;
 
 void	ft_putchar(char c)
 {
@@ -58,7 +60,7 @@ int		*sk_positions(int sudoku[9][9], int znb)
 	return (ztofind);
 }
 
-int		sk_fillarray(char str[9][10], int sudoku[9][9])
+int		sk_fillarray(char *str[], int sudoku[9][9])
 {
 	int		i;
 	int		j;
@@ -69,14 +71,14 @@ int		sk_fillarray(char str[9][10], int sudoku[9][9])
 	while (i < 9)
 	{
 		j = 0;
-		while (str[i][j] != '\0')
+		while (str[i + 1][j] != '\0')
 		{
-			if (str[i][j] == '.')
+			if (str[i + 1][j] == '.')
 			{
-				str[i][j] = '0';
+				str[i + 1][j] = '0';
 				count++;
 			}
-			sudoku[i][j] = str[i][j] - '0';
+			sudoku[i][j] = str[i + 1][j] - '0';
 			j++;
 		}
 		i++;
@@ -133,55 +135,78 @@ int		sk_isok(int sudoku[9][9], int num, int li, int col)
 	return (1);
 }
 
-int		sudoku_solve(int sudoku[9][9], int* ztofind, int zi, int zi_stop)
+int		sudoku_solve(int sudoku[9][9], int *ztofind, int zi, int zi_stop)
 {
 	int i;
-	int solutions;
 
-	solutions = 0;
 	if (zi == zi_stop)
 		return (1);
 	i = 1;
 	while (i <= 9)
 	{
-		if (sk_isok(sudoku, i, ztofind[zi] / 10, ztofind[zi] % 10))
+		if (sk_isok(sudoku, i, (ztofind[zi] / 10), (ztofind[zi] % 10)))
 		{
-			sudoku[ztofind[zi] / 10][ztofind[zi] % 10] = i;
+			sudoku[(ztofind[zi] / 10)][(ztofind[zi] % 10)] = i;
 			if (sudoku_solve(sudoku, ztofind, zi + 1, zi_stop))
 			{
-				return (1);
+				if (g_skipfirstsoluce == 0)
+					return (1);
+				else
+					g_skipfirstsoluce = 0;
 			}
 		}
-		sudoku[ztofind[zi] / 10][ztofind[zi] % 10] = 0;
+		sudoku[(ztofind[zi] / 10)][(ztofind[zi] % 10)] = 0;
 		i++;
 	}
 	return (0);
 }
 
-int		main(int argc, char **argv)
+int		checkuserargv(int argc, char *argv[])
+{
+	int i;
+	int j;
+
+	i = 1;
+	if (argc != 10)
+		return (0);
+	while (i < 10)
+	{
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			j++;
+			if (!((argv[i][j] >= '1' && argv[i][j] <= '9') ||
+						(argv[i][j] == '.') || (argv[i][j] == '\0')))
+				return (0);
+		}
+		if (j != 9)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int		main(int argc, char *argv[])
 {
 	int		sudoku[9][9];
-	int		count;
+	int		zcount;
 	int		*ztofind;
-	/*char	argv[9][10] =
+
+	if (!checkuserargv(argc, argv))
 	{
-		{"9...7...."},
-		{"2...9..53"},
-		{".6..124.."},
-		{"84...1.9."},
-		{"5.....8.."},
-		{".31..4..."},
-		{"..37..68."},
-		{".9..5.741"},
-		{"47......."},
-	};*/
-	if (argc == 10)
-	{
-		sk_fillarray(**argv, sudoku);
+		ft_putstr("Error\n");
+		return (0);
 	}
-	count = sk_fillarray(argv, sudoku);
-	ztofind = sk_positions(sudoku, count);
-	if (sudoku_solve(sudoku, ztofind, 0, count))
+	zcount = sk_fillarray(argv, sudoku);
+	ztofind = sk_positions(sudoku, zcount);
+	g_skipfirstsoluce = 1;
+	if (sudoku_solve(sudoku, ztofind, 0, zcount))
+	{
+		ft_putstr("Error\n");
+		return (0);
+	}
+	sk_fillarray(argv, sudoku);
+	if (sudoku_solve(sudoku, ztofind, 0, zcount))
 		sk_display(sudoku);
 	else
 		ft_putstr("Error\n");
