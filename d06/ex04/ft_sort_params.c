@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 11:49:43 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/15 16:40:28 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/19 13:58:29 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr(char *str)
 	int		i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		ft_putchar(str[i]);
 		i++;
@@ -34,16 +34,19 @@ int		ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
+void	ft_printandback(char *str)
+{
+	ft_putstr(str);
+	ft_putchar('\n');
+}
+
 int		main(int argc, char *argv[])
 {
 	char	*swap;
 	int		i;
 	int		finish;
-	int		j;
 
 	finish = 1;
-	i = 0;
-	j = 0;
 	while (finish == 1)
 	{
 		finish = 0;
@@ -59,11 +62,8 @@ int		main(int argc, char *argv[])
 			}
 		}
 	}
-	j = 0;
-	while (++j < argc)
-	{
-		ft_putstr(argv[j]);
-		ft_putchar('\n');
-	}
+	i = 0;
+	while (++i < argc)
+		ft_printandback(argv[i]);
 	return (0);
 }
