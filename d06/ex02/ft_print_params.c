@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 11:29:19 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/15 11:51:24 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/19 13:37:21 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		main(int argc, char *argv[])
 {
 	int		i;
 
-	i = 0;
+	i = 1;
 	(void)argc;
 	while (argv[i])
 	{
