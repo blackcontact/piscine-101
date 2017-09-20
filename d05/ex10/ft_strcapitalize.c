@@ -6,7 +6,7 @@
 /*   By: mschneid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 22:58:31 by mschneid          #+#    #+#             */
-/*   Updated: 2017/09/19 19:18:08 by mschneid         ###   ########.fr       */
+/*   Updated: 2017/09/19 19:22:16 by mschneid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ char	*ft_strcapitalize(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z') && !((str[i - 1] >= 'A' && str[i - 1] <= 'Z') || (str[i - 1] >= 'a' && str[i - 1] <= 'z')))
+		if ((str[i] >= 'a' && str[i] <= 'z')
+				&& !((str[i - 1] >= 'A' && str[i - 1] <= 'Z')
+					|| (str[i - 1] >= 'a' && str[i - 1] <= 'z')))
 			str[i] -= 32;
 		i++;
 	}
